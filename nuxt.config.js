@@ -1,4 +1,3 @@
-
 export default {
   mode: 'spa',
   /*
@@ -28,6 +27,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // { src: '~/plugins/iono/player_54.min.js', ssr: false },
   ],
   /*
   ** Nuxt.js modules
@@ -56,4 +56,5 @@ export default {
     extend(config, ctx) {
     },
   },
+
 }

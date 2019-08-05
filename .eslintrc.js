@@ -4,6 +4,9 @@ module.exports = {
     browser: true,
     node: true
   },
+  globals: {
+    iono: true
+  },
   parserOptions: {
     parser: 'babel-eslint'
   },
@@ -34,6 +37,7 @@ module.exports = {
         "max": 1
       }
     ],
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    'no-console': 'off',
   },
 }
