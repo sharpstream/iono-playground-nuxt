@@ -195,7 +195,7 @@ export default {
       })
 
       this.player.on('seeking', (e) => {
-        console.log('seeking')
+        console.info('seeking')
       })
 
       this.player.on('playlistselect', () => {
@@ -217,7 +217,7 @@ export default {
       /** * LOGS ***/
       // listen for tracking events and log them to the console
       this.player.on('tracking', (event) => {
-        console.log(event)
+        console.info(event)
         // action tracking events
         if (event.details.event === 'action') {
           this.events += `TrackingEvent(action): ${event.details.action} (${event.details.uid})\n`
@@ -230,14 +230,14 @@ export default {
       /** * END LOGS ***/
 
       this.player.on('texttrackschange', (event) => {
-        console.log(event)
+        console.info(event)
 
         // update the list of chapters
         this.chapters = this.player.getChapters()
       })
 
       this.player.on('textcuechange', (event) => {
-        console.log(event)
+        console.info(event)
 
         const chapter = this.player.getCurrentChapter()
         const captions = this.player.getCurrentCaptions()
@@ -246,8 +246,8 @@ export default {
         this.chapterText = (chapter && chapter.text) || ''
 
         // GH: build current captions text - it is possible to have multiple captions at the same time
-        //  so we need to make sure we render them all. Here I just map over them to get an array
-        //  of text strings, then join them together with new lines.
+        // so we need to make sure we render them all. Here I just map over them to get an array
+        // of text strings, then join them together with new lines.
         this.captionsText = (captions || []).map((caption) => {
           return caption.text
         }).join('\n')
@@ -270,7 +270,7 @@ export default {
 
       this.player.on('progress', (event) => {
         this.bufferedPercentage = this.player.getBufferedPercentage()
-        console.log(event)
+        console.info(event)
       })
     },
 
@@ -333,7 +333,7 @@ export default {
     async getPlaylist() {
       const { data } = await this.$axios.get('playground/playlist.json')
       this.playlist = data
-      console.log(this.playlist)
+      console.info(this.playlist)
     },
 
   },
