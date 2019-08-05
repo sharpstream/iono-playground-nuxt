@@ -12,4 +12,6 @@ $ yarn install
 $ yarn dev
 ```
 
+Visit: localhost:3000/playground
+
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
